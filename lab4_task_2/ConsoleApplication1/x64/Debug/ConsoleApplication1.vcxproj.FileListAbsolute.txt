@@ -1,1 +1,2 @@
 D:\repos\ConsoleApplication1\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
+D:\repos\ConsoleApplication1\lab4_task_2\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
