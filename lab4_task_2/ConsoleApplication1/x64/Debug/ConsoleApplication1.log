@@ -1,0 +1,4 @@
+﻿cl : командная строка  warning D9025: переопределение "/openmp" на "/openmp:llvm"
+  ConsoleApplication1.cpp
+D:\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(20,16): warning C4018: >=: несоответствие типов со знаком и без знака
+  ConsoleApplication1.vcxproj -> D:\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

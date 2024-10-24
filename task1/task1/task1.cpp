@@ -1,20 +1,119 @@
-﻿// task1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include <algorithm>
 #include <iostream>
+#include <omp.h>
+#include <iterator>
+#include <random>
+#include <vector>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+vector<int> init_vec() {
+    long long N;
+    int nThreads = 0;
+    printf("bubble sort\n");
+    printf("N: ");
+    cin >> N;
+
+    std::vector<int> v{};
+    for (int i = 0; i < N; i++) {
+        v.push_back(i);
+    }
+
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+    std::shuffle(v.begin(), v.end(), g);
+
+    for (int i = 0; i < N; i++) {
+        cout << v[i] << " ";
+    }
+    cout << "\n";
+    return v;
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
+void bubble_sort() {
 
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+    vector<int> v = init_vec();
+
+    printf("num_threads: ");
+
+    int N = v.size();
+    int num_threads;
+
+    cin >> num_threads;
+
+    omp_set_num_threads(num_threads);
+
+#pragma omp parallel 
+    {
+        int swap;
+        for (int i = 0; i < N; i++) {
+
+#pragma omp for schedule(static) 
+            for (int j = i % 2; j < N - 1; j = j + 2) {
+                if (v[j] > v[j + 1]) {
+                    swap = v[j + 1];
+                    v[j + 1] = v[j];
+                    v[j] = swap;
+                    printf("[%d]: swap %d, %d \n", omp_get_thread_num(), j, j + 1);
+                }
+            }
+        }
+    }
+    for (int i = 0; i < N; i++) {
+        cout << v[i] << " ";;
+    }
+
+}
+
+void merge_sort() {
+#pragma omp parallel sections
+    {
+#pragma omp section
+        {
+            printf("section 1 id = %d, \n", omp_get_thread_num());
+        }
+#pragma omp section
+        {
+            printf("section 2 id = %d, \n", omp_get_thread_num());
+        }
+#pragma omp section
+        {
+            printf("section 3 id = %d, \n", omp_get_thread_num());
+        }
+    }
+}
+
+
+void init_merge_sort() {
+    vector<int> v = init_vec();
+
+    printf("num_threads: ");
+
+    int N = v.size();
+    int num_threads;
+    cin >> num_threads;
+
+    omp_set_num_threads(num_threads);
+
+
+
+}
+
+
+
+
+int main() {
+
+    bubble_sort();
+    return 0;
+}
+
+
+
+
+
+int main() {
+
+    bubble_sort();
+    return 0;
+}
