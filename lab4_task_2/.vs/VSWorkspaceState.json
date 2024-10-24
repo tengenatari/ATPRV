@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ConsoleApplication1"
   ],
-  "SelectedNode": "\\ConsoleApplication1.sln",
+  "SelectedNode": "\\ConsoleApplication1\\ConsoleApplication1.cpp",
   "PreviewInSolutionExplorer": false
 }

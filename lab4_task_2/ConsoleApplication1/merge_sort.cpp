@@ -8,7 +8,6 @@
 
 unsigned int rand_interval(unsigned int min, unsigned int max)
 {
-    // https://stackoverflow.com/questions/2509679/
     int r;
     const unsigned int range = 1 + max - min;
     const unsigned int buckets = RAND_MAX / range;
