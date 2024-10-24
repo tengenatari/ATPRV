@@ -7,9 +7,8 @@
 using namespace std;
 
 vector<int> init_vec(int N) {
-    
-    int nThreads = 0;
-    
+  
+  
 
     std::vector<int> v{};
     for (int i = 0; i < N; i++) {
@@ -22,29 +21,20 @@ vector<int> init_vec(int N) {
     std::shuffle(v.begin(), v.end(), g);
 
     
-    cout << "\n";
     return v;
 }
 
-void bubble_sort(int print, int N) {
-    printf("bubble sort\n");
+void bubble_sort(int print, int N, int num_threads) {
+    
     
     vector<int> v = init_vec(N);
-
+    printf("bubble sort\n");
     if (print) {
         for (int i = 0; i < N; i++) {
             cout << v[i] << " ";
         }
         cout << "\n";
-    }
-
-
-    printf("num_threads: ");
-
-
-    int num_threads;
-
-    cin >> num_threads;
+    }    
 
     omp_set_num_threads(num_threads);
 
@@ -52,15 +42,16 @@ void bubble_sort(int print, int N) {
 #pragma omp parallel 
     {
         int swap;
+#pragma omp for schedule(static) 
         for (int i = 0; i < N; i++) {
 
-#pragma omp for schedule(static) 
+
             for (int j = i % 2; j < N - 1; j = j + 2) {
                 if (v[j] > v[j + 1]) {
                     swap = v[j + 1];
                     v[j + 1] = v[j];
                     v[j] = swap;
-                    if (print) {
+                    if (print >= 2) {
                         printf("[%d]: swap %d, %d \n", omp_get_thread_num(), j, j + 1);
                     }
                     
@@ -77,7 +68,6 @@ void bubble_sort(int print, int N) {
     }
     
     printf("Time: %f (s) \n", end - begin);
-
 }
 
 

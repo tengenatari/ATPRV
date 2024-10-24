@@ -10,10 +10,17 @@
 using namespace std;
 
 int main() {
+	int print;
 	int N;
+	int num_threads;
+	printf("print: ");
+	cin >> print;
 	printf("N: ");
 	cin >> N;
-
-	bubble_sort(1, N);
-	start_merge_sort(1, N);
+	printf("num threads: ");
+	cin >> num_threads;
+	bubble_sort(print, N, num_threads);
+	start_merge_sort(print, N, num_threads);
+	start_quick_sort(print, N, num_threads);
+	shell_sort(print, N, num_threads);
 }

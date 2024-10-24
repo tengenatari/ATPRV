@@ -3,28 +3,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <omp.h>
-
+#include "Header.h"
 #define TASK_SIZE 100
 
-unsigned int rand_interval(unsigned int min, unsigned int max)
-{
-    int r;
-    const unsigned int range = 1 + max - min;
-    const unsigned int buckets = RAND_MAX / range;
-    const unsigned int limit = buckets * range;
-
-    do
-    {
-        r = rand();
-    } while (r >= limit);
-
-    return min + (r / buckets);
-}
-
-void fillupRandomly(int* m, int size, unsigned int min, unsigned int max) {
-    for (int i = 0; i < size; i++)
-        m[i] = rand_interval(min, max);
-}
 
 void mergeSortAux(int* X, int n, int* tmp) {
     int i = 0;
@@ -70,29 +51,17 @@ void init(int* a, int size) {
         a[i] = 0;
 }
 
-void printArray(int* a, int size) {
-    for (int i = 0; i < size; i++)
-        printf("%d ", a[i]);
-    printf("\n");
-}
 
-int isSorted(int* a, int size) {
-    for (int i = 0; i < size - 1; i++)
-        if (a[i] > a[i + 1])
-            return 0;
-    return 1;
-}
-
-int start_merge_sort(int print, int N) {
-    srand(123456);
+int start_merge_sort(int print, int N, int num_threads) {
+    
  
     
-    int numThreads = 4;
+    printf("merge sort\n");
     int* X = (int*)malloc(N * sizeof(int));
     int* tmp = (int*)malloc(N * sizeof(int));
 
     omp_set_dynamic(0);              
-    omp_set_num_threads(numThreads); 
+    omp_set_num_threads(num_threads); 
 
     
     if (!X || !tmp)
@@ -102,27 +71,28 @@ int start_merge_sort(int print, int N) {
         return (EXIT_FAILURE);
     }
     
-    fillupRandomly(X, N, 0, 5);
+    fillupRandomly(X, N, 0, N);
 
 
     if (print) {
         printArray(X, N);
     }
     double begin = omp_get_wtime();
-#pragma omp parallel
+#pragma omp parallel 
     {
 #pragma omp single
         mergeSort(X, N, tmp);
     }
     double end = omp_get_wtime();
-    printf("Time: %f (s) \n", end - begin);
+    
+    
 
     assert(1 == isSorted(X, N));
 
     if (print) {
         printArray(X, N);
     }
-
+    printf("Time: %f (s) \n", end - begin);
     free(X);
     free(tmp);
     return (EXIT_SUCCESS);

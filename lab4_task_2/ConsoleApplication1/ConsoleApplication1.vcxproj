@@ -131,7 +131,10 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="bubble_sort.cpp" />
+    <ClCompile Include="quick_sort.cpp" />
     <ClCompile Include="merge_sort.cpp" />
+    <ClCompile Include="random.cpp" />
+    <ClCompile Include="shell_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
