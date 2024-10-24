@@ -1,4 +1,23 @@
 ﻿  ConsoleApplication1.cpp
-D:\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(118,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(126,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  ConsoleApplication1.vcxproj -> D:\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(1196,55): error C2794: difference_type: не является прямым или косвенным базовым классом для "std::iterator_traits<int>"
+  (компиляция исходного файла "ConsoleApplication1.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(1196,55):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          D:\repos\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(23,10):
+          выполняется компиляция ссылки на экземпляр шаблон функции "void std::shuffle<int,std::mt19937&>(_RanIt,_RanIt,_Urng)"
+          with
+          [
+              _RanIt=int,
+              _Urng=std::mt19937 &
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(5676,20):
+          выполняется компиляция ссылки на экземпляр псевдоним шаблон функции "std::_Iter_diff_t<int>"
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(5676,20): error C2938: "std::_Iter_diff_t": не удалось специализировать шаблон псевдонима
+  (компиляция исходного файла "ConsoleApplication1.cpp")
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(5676,58): error C2514: "std::_Rng_from_urng": невозможно создать шаблон класса.
+  (компиляция исходного файла "ConsoleApplication1.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\algorithm(5394,7):
+       см. объявление "std::_Rng_from_urng"
+  

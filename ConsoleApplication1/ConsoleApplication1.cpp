@@ -6,51 +6,40 @@
 #include <vector>
 using namespace std;
 
-vector<int> init_vec() {
-    long long N;
+void init_vec(int v[], int N) {
     int nThreads = 0;
     printf("bubble sort\n");
-    printf("N: ");
-    cin >> N;
+    
+    
 
-    std::vector<int> v{};
+    
     for (int i = 0; i < N; i++) {
-        v.push_back(i);
+        v[i] = i;
     }
 
     std::random_device rd;
     std::mt19937 g(rd());
 
-    std::shuffle(v.begin(), v.end(), g);
+    std::shuffle(*v, *v+N, g);
 
     for (int i = 0; i < N; i++) {
         cout << v[i] << " ";
     }
     cout << "\n";
-    return v;
 }
 
-void bubble_sort(vector<int> v, int start, int end) {
+void bubble_sort(int  v[], int start, int end) {
+    for (int i = start; i < end; i++) {
 
 
-
-
-#pragma omp parallel 
-    {
-        int swap;
-        for (int i = start; i < end; i++) {
-
-#pragma omp for schedule(static) 
-            for (int j = i % 2 + start; j < end - 1; j = j + 2) {
-                if (v[j] > v[j + 1]) {
-                    swap = v[j + 1];
-                    v[j + 1] = v[j];
-                    v[j] = swap;
-                    printf("[%d]: swap %d, %d \n", omp_get_thread_num(), j, j + 1);
-                }
+        for (int j = i % 2 + start; j < end - 1; j = j + 2) {
+            if (v[j] > v[j + 1]) {
+                iter_swap(&v + j, &v + j + 1);
+                printf("[%d]: swap %d, %d \n", omp_get_thread_num(), j, j + 1);
             }
         }
     }
+    
     for (int i = 0; i < end; i++) {
         cout << v[i] << " ";;
     }
@@ -60,7 +49,7 @@ void bubble_sort(vector<int> v, int start, int end) {
 
 
 
-void merge_vec(vector<int> v, int start, int end) {
+void merge_vec(int v[], int start, int end) {
     int swap;
     while (start < end)
     {
@@ -76,23 +65,24 @@ void merge_vec(vector<int> v, int start, int end) {
 }
 
 
-void mergeSortRecursive(vector<int> v, int left, int right, int threads) {
-    omp_set_num_threads(2);
+void mergeSortRecursive(int v[], int left, int right, int num_threads) {
+    
 
-#pragma omp parallel 
-    {
+        omp_set_num_threads(num_threads);
         if (right - left > 10)
         {
-#pragma omp sections
+#pragma omp parallel sections shared(v)
             {
 #pragma omp section
                 {
-                    mergeSortRecursive(v, left, right / 2, threads);
+                    
+                    mergeSortRecursive(v, left, right / 2, num_threads);
                 }
 
 #pragma omp section
                 {
-                    mergeSortRecursive(v, (right + 1) / 2, right, threads);
+                    
+                    mergeSortRecursive(v, (right + 1) / 2, right, num_threads);
                 }
 
 
@@ -103,7 +93,6 @@ void mergeSortRecursive(vector<int> v, int left, int right, int threads) {
             bubble_sort(v, left, right);
         }
 
-    }
 }
 
 
@@ -111,11 +100,13 @@ void mergeSortRecursive(vector<int> v, int left, int right, int threads) {
 
 
 void init_merge_sort(){
-    vector<int> v = init_vec();
+    int N;
+    cin >> N;
+    int v[100000];
+    init_vec(v, N);
 
     printf("num_threads: ");
 
-    int N = v.size();
     int num_threads;
     cin >> num_threads;
 
@@ -123,11 +114,11 @@ void init_merge_sort(){
     #pragma omp parallel
     {
         #pragma omp single
-        mergeSortRecursive(v, 0, v.size() - 1, num_threads);
+        mergeSortRecursive(v, 0, N, num_threads);
     
     }
     
-    for (int i = 0; i < v.size(); i++) {
+    for (int i = 0; i < N; i++) {
         cout << v[i] << " ";
     }
     cout << "\n";
