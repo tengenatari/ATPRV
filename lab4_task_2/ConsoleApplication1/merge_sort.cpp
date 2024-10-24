@@ -84,10 +84,10 @@ int isSorted(int* a, int size) {
     return 1;
 }
 
-int start_merge_sort() {
+int start_merge_sort(int print, int N) {
     srand(123456);
-    int N = 20;
-    int print = 1;
+ 
+    
     int numThreads = 4;
     int* X = (int*)malloc(N * sizeof(int));
     int* tmp = (int*)malloc(N * sizeof(int));
@@ -104,7 +104,11 @@ int start_merge_sort() {
     }
     
     fillupRandomly(X, N, 0, 5);
-    printArray(X, N);
+
+
+    if (print) {
+        printArray(X, N);
+    }
     double begin = omp_get_wtime();
 #pragma omp parallel
     {

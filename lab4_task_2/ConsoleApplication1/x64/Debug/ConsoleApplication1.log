@@ -1,4 +1,6 @@
 ﻿cl : командная строка  warning D9025: переопределение "/openmp" на "/openmp:llvm"
+  bubble_sort.cpp
   merge_sort.cpp
 D:\repos\ConsoleApplication1\lab4_task_2\ConsoleApplication1\merge_sort.cpp(20,16): warning C4018: >=: несоответствие типов со знаком и без знака
+  Создание кода...
   ConsoleApplication1.vcxproj -> D:\repos\ConsoleApplication1\lab4_task_2\x64\Debug\ConsoleApplication1.exe

@@ -1,3 +1,3 @@
 #pragma once
-void bubble_sort();
-int start_merge_sort();
+void bubble_sort(int print, int N);
+int start_merge_sort(int print, int N);

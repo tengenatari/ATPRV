@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\merge_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\merge_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\ConsoleApplication1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\bubble_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\bubble_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\merge_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3C9A7265-B29B-409A-9106-9B99224D5B82}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\merge_sort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\repos\\ConsoleApplication1\\task1\\task1\\task1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -35,7 +35,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,26 +51,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "merge_sort.cpp",
               "DocumentMoniker": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\merge_sort.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\merge_sort.cpp",
-              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\merge_sort.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\merge_sort.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\merge_sort.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\merge_sort.cpp*",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-24T17:48:13.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Header.h",
               "DocumentMoniker": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\Header.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\Header.h",
-              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\Header.h",
-              "RelativeToolTip": "ConsoleApplication1\\Header.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
+              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\Header.h*",
+              "RelativeToolTip": "ConsoleApplication1\\Header.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-24T17:46:18.659Z",
               "EditorCaption": ""
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "bubble_sort.cpp",
               "DocumentMoniker": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\bubble_sort.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\bubble_sort.cpp",
-              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\bubble_sort.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\bubble_sort.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\bubble_sort.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\bubble_sort.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-24T17:39:35.328Z",
               "EditorCaption": ""
@@ -123,13 +123,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ConsoleApplication1.cpp",
               "DocumentMoniker": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\ConsoleApplication1.cpp",
               "RelativeDocumentMoniker": "ConsoleApplication1\\ConsoleApplication1.cpp",
-              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\ConsoleApplication1.cpp",
-              "RelativeToolTip": "ConsoleApplication1\\ConsoleApplication1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "ToolTip": "D:\\repos\\ConsoleApplication1\\lab4_task_2\\ConsoleApplication1\\ConsoleApplication1.cpp*",
+              "RelativeToolTip": "ConsoleApplication1\\ConsoleApplication1.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-23T07:13:27.209Z",
               "EditorCaption": ""
