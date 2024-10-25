@@ -52,12 +52,12 @@ void init(int* a, int size) {
 }
 
 
-int start_merge_sort(int print, int N, int num_threads) {
+int start_merge_sort(int print, int N, int num_threads, int X[]) {
     
  
     
-    printf("merge sort\n");
-    int* X = (int*)malloc(N * sizeof(int));
+    
+
     int* tmp = (int*)malloc(N * sizeof(int));
 
     omp_set_dynamic(0);              
@@ -88,11 +88,11 @@ int start_merge_sort(int print, int N, int num_threads) {
     
 
     assert(1 == isSorted(X, N));
-
+    if (print) { printf("Is arrau sorted % d \n", isSorted(X, N)); }
     if (print) {
         printArray(X, N);
     }
-    printf("Time: %f (s) \n", end - begin);
+    printf("%f ", end - begin);
     free(X);
     free(tmp);
     return (EXIT_SUCCESS);

@@ -1,9 +1,3 @@
 ﻿cl : командная строка  warning D9025: переопределение "/openmp" на "/openmp:llvm"
-  random.cpp
-bubble_sort.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl fillupRandomly(int *,int,unsigned int,unsigned int)" (?fillupRandomly@@YAXPEAHHII@Z) в функции "void __cdecl bubble_sort(int,int,int)" (?bubble_sort@@YAXHHH@Z).
-quick_sort.obj : error LNK2001: неразрешенный внешний символ "void __cdecl fillupRandomly(int *,int,unsigned int,unsigned int)" (?fillupRandomly@@YAXPEAHHII@Z).
-merge_sort.obj : error LNK2001: неразрешенный внешний символ "void __cdecl fillupRandomly(int *,int,unsigned int,unsigned int)" (?fillupRandomly@@YAXPEAHHII@Z).
-shell_sort.obj : error LNK2001: неразрешенный внешний символ "void __cdecl fillupRandomly(int *,int,unsigned int,unsigned int)" (?fillupRandomly@@YAXPEAHHII@Z).
-    Указание на символы, которые определены и могут подойти:
-      "void __cdecl fillupRandomly(int * const,int,int,int)" (?fillupRandomly@@YAXQEAHHHH@Z)
-D:\repos\ConsoleApplication1\lab4_task_2\x64\Debug\ConsoleApplication1.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
+  ConsoleApplication1.cpp
+  ConsoleApplication1.vcxproj -> D:\repos\ConsoleApplication1\lab4_task_2\x64\Debug\ConsoleApplication1.exe

@@ -2,17 +2,25 @@
 #include <omp.h>
 #include "Header.h"
 using namespace std;
+void insertionsort(int a[], int n, int stride) {
+    for (int j = stride; j < n; j += stride) {
+        int key = a[j];
+        int i = j - stride;
+        while (i >= 0 && a[i] > key) {
+            a[i + stride] = a[i];
+            i -= stride;
+        }
+        a[i + stride] = key;
+    }
+}
 
-
-int shell_sort(int print, int N, int num_threads)
+int shell_sort(int print, int N, int num_threads, int arr[])
 {
 
 
+    int i, m;
 
-    int* arr = (int*)malloc(N * sizeof(int));
 
-    printf("shell sort\n");
-    fillupRandomly(arr, N, 0, N);
     omp_set_dynamic(0);
     omp_set_num_threads(num_threads);
 
@@ -20,33 +28,21 @@ int shell_sort(int print, int N, int num_threads)
         printArray(arr, N);
     }
     double begin = omp_get_wtime();
-#pragma omp parallel 
+
+    for (m = N / 2; m > 0; m /= 2)
     {
-        for (int gap = N / 2; gap > 0; gap /= 2)
-        {
-#pragma omp for 
-            for (int i = gap; i < N; i += 1)
-            {
-
-                int temp = arr[i];
-
-
-                int j;
-
-                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
-                    arr[j] = arr[j - gap];
-
-                arr[j] = temp;
-            }
-        }
+#pragma omp parallel for shared(arr,m,N) private (i) default(none)
+        for (i = 0; i < m; i++)
+            insertionsort(&(arr[i]), N - i, m);
     }
+ 
     double end = omp_get_wtime();
-    
+    if (print) { printf("Is arrau sorted % d \n", isSorted(arr, N)); }
     
     if (print) {
         cout << "The sorted array is: ";
         printArray(arr, N);
     }
-    printf("Time: %f (s) \n", end - begin);
+    printf("%f ", end - begin);
     return 0;
 }
